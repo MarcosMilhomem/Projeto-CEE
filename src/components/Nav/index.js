@@ -4,7 +4,7 @@ export default function Nav() {
     return (
         <>
             <nav>
-                <ul  className="flex justify-center gap-1 p-3 bg-white font-[Geist] text-sm font-bold uppercase text-[#203447]">
+                <ul  className="flex justify-center gap-1 p-3 bg-white font-[Geist] text-sm font-bold  text-[#203447]">
                     <li className=" hover:bg-gray-100 px-5 py-2 rounded-xl duration-100">
                         <Link href="/">
                             Home

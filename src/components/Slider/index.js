@@ -3,7 +3,7 @@
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
 
-const images = ["/img/tumb-1.png", "/img2.jpg", "/img3.jpg"];
+const images = ["/img/tumb1.png", "/img/tumb2.png", "/img/tumb3.png"];
 
 export default function Slider() {
   const [current, setCurrent] = useState(0);
@@ -45,15 +45,15 @@ export default function Slider() {
         onClick={prevSlide}
         className="absolute top-1/2 left-2 transform -translate-y-1/2 cursor-pointer p-2 "
       >
-        <ArrowLeftIcon className="h-6 w-6 text-gray-800 hover:text-white" />
+        <ArrowLeftIcon className="h-6 w-6 text-gray-300 hover:scale-115" />
       </button>
 
       {/* Next Button */}
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow"
+        className="absolute top-1/2 right-2 transform -translate-y-1/2 p-2"
       >
-        ›
+        <ArrowRightIcon className="h-6 w-6 text-gray-300 hover:text-white" />
       </button>
 
       {/* Dots */}
@@ -61,7 +61,7 @@ export default function Slider() {
         {images.map((_, index) => (
           <button
             key={index}
-            className={`w-3 h-3 rounded-full ${
+            className={`w-2 h-2 rounded-full ${
               index === current ? "bg-white" : "bg-gray-400"
             }`}
             onClick={() => setCurrent(index)}
