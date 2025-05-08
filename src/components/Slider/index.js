@@ -1,92 +1,72 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from "react";
-import Image from "next/image";
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
+import { useEffect, useState } from "react";
 
+const images = ["/img/tumb-1.png", "/img2.jpg", "/img3.jpg"];
 
 export default function Slider() {
+  const [current, setCurrent] = useState(0);
 
-    const countRef = useRef(1);
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % images.length);
+  };
 
-    // useEffect(() => {
-    //   const interval = setInterval(() => {
-    //     nextImage();
-    //   }, 5000);
-  
-    //   return () => clearInterval(interval); // limpar o intervalo ao desmontar
-    // }, []);
-  
-    const nextImage = () => {
-      countRef.current++;
-      if (countRef.current > 4) {
-        countRef.current = 1;
-      }
-  
-      const radio = document.getElementById(`radio0${countRef.current}`) ;
-      if (radio) {
-        radio.checked = true;
-      }
-    };
+  const prevSlide = () => {
+    setCurrent((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000); // troca a cada 3 segundos
+
+    return () => clearInterval(interval); // limpa o intervalo ao desmontar o componente
+  }, [current]);
 
   return (
-    <div>
-      <div className="slider">
-        <div className="slides">
-          <input type="radio" name="radiobtn" id="radio01" />
-          <input type="radio" name="radiobtn" id="radio02" />
-          <input type="radio" name="radiobtn" id="radio03" />
-          <input type="radio" name="radiobtn" id="radio04" />
+    <div className="relative w-full max-w-full object-cover mx-auto overflow-hidden  shadow-lg">
+      <div
+        className="flex transition-transform duration-500"
+        style={{ transform: `translateX(-${current * 100}%)` }}
+      >
+        {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt={`slide-${index}`}
+            className="w-full flex-shrink-0"
+          />
+        ))}
+      </div>
 
-          <div className="slide first">
-            <Image
-              src={"/img/tumb-1.png"}
-              alt="Comissão"
-              width={500}
-              height={500}
-            />
-          </div>
+      {/* Prev Button */}
+      <button
+        onClick={prevSlide}
+        className="absolute top-1/2 left-2 transform -translate-y-1/2 cursor-pointer p-2 "
+      >
+        <ArrowLeftIcon className="h-6 w-6 text-gray-800 hover:text-white" />
+      </button>
 
-          <div className="slide">
-            <Image
-              src={"/img/uniforme-ofc.png"}
-              alt="Comissão"
-              width={500}
-              height={500}
-            />
-          </div>
+      {/* Next Button */}
+      <button
+        onClick={nextSlide}
+        className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow"
+      >
+        ›
+      </button>
 
-          <div className="slide">
-            <Image
-              src={"/img/uniforme-gol.png"}
-              alt="Comissão"
-              width={500}
-              height={500}
-            />
-          </div>
-
-          <div className="slide">
-            <Image
-              src={"/img/uniforme-clean.png"}
-              alt="Comissão"
-              width={500}
-              height={500}
-            />
-          </div>
-
-          <div className="navigation-auto">
-            <div className="auto-btn1"></div>
-            <div className="auto-btn2"></div>
-            <div className="auto-btn3"></div>
-            <div className="auto-btn4"></div>
-          </div>
-        </div>
-
-        <div className="manual-navigation">
-          <label htmlFor="radio01" className="manual-btn"></label>
-          <label htmlFor="radio02" className="manual-btn"></label>
-          <label htmlFor="radio03" className="manual-btn"></label>
-          <label htmlFor="radio04" className="manual-btn"></label>
-        </div>
+      {/* Dots */}
+      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            className={`w-3 h-3 rounded-full ${
+              index === current ? "bg-white" : "bg-gray-400"
+            }`}
+            onClick={() => setCurrent(index)}
+          />
+        ))}
       </div>
     </div>
   );

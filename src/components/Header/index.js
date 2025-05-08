@@ -21,31 +21,31 @@ export default function Nav() {
         <nav className="flex bg-white justify-center gap-12 items-center h-20 text-[#1267a3] pl-10 pr-10 text-geistSans">
           <Image src={"/img/logo.png"} alt="Logo" width={90} height={100} />
 
-          <div className="flex rounded-full border-2 border-[#1267a3]">
+          <div className="flex rounded-full border border-[#1267a3]">
             <input
               type="text"
               placeholder="O que você busca?"
               id="search"
-              className="bg-white text-black text-lg  pl-6 w-xl h-12  rounded-l-4xl outline-none"
+              className="flex m-auto bg-white text-black text-sm pl-6 w-md h-9 rounded-l-4xl outline-none"
             />
 
             <label
               for="search"
               className="text-[#1267a3] rounded-r-4xl bg-[#456789] border-2 border-white w-15 flex items-center justify-center"
             >
-              <MagnifyingGlassIcon className="h-8 text-white font-bold" />
+              <MagnifyingGlassIcon className="h-6 text-white" />
             </label>
           </div>
 
           <div
-            className="flex cursor-pointer gap-3 items-end"
+            className="flex cursor-pointer gap-2"
             onMouseEnter={() => {
               modal();
             }}
           >
-            <UserIcon className="w-11 h-11 text-[#1267a3]" />
+            <UserIcon className="w-7 h-9 text-[#1267a3]" />
 
-            <div>
+            <div className="text-xs">
               <p>Olá</p>
               <p className="font-bold">Entre | Registrar</p>
             </div>
@@ -53,8 +53,8 @@ export default function Nav() {
 
           <div className="gap-x-10">
             <Link href="/cart" className="flex items-start">
-              <ShoppingCartIcon className="w-11 h-11" />
-              <span className=" bg-[#45678] text-white pl-3 pr-3 rounded-2xl">
+              <ShoppingCartIcon className="h-8" />
+              <span className=" bg-amber-400 text-white pl-2 pr-2 rounded-2xl text-xs">
                 0
               </span>
             </Link>
