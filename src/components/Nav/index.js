@@ -4,48 +4,48 @@ export default function Nav() {
     return (
         <>
             <nav>
-                <ul  className="flex justify-center gap-15 p-3 bg-white font-[Geist] font-bold uppercase text-[#456789]">
-                    <li className=" hover:scale-110 duration-100 hover:text-[#6d95bd]">
+                <ul  className="flex justify-center gap-1 p-3 bg-white font-[Geist] text-sm font-bold uppercase text-[#203447]">
+                    <li className=" hover:bg-gray-100 px-5 py-2 rounded-xl duration-100">
                         <Link href="/">
                             Home
                         </Link>
                     </li>
-                    <li className=" hover:scale-110 duration-100 hover:text-[#6d95bd]">
+                    <li className="duration-100 hover:bg-gray-100 px-5 py-2 rounded-xl">
                         <Link href="/">
                             Loja
                         </Link>
                     </li>
-                    <li className=" hover:scale-110 duration-100 hover:text-[#6d95bd]">
+                    <li className=" duration-100 hover:bg-gray-100 px-5 py-2 rounded-xl">
                         <Link href="/">
                             Sobre
                         </Link>
                     </li>
-                    <li className=" hover:scale-110 duration-100 hover:text-[#6d95bd]">
+                    <li className=" duration-100 hover:bg-gray-100 px-5 py-2 rounded-xl">
                         <Link href="/">
                             Airdots
                         </Link>
                     </li>
-                    <li className=" hover:scale-110 duration-100 hover:text-[#6d95bd]">
+                    <li className=" duration-100 hover:bg-gray-100 px-5 py-2 rounded-xl">
                         <Link href="/">
                             Apple Watch
                         </Link>
                     </li>
-                    <li className=" hover:scale-110 duration-100 hover:text-[#6d95bd]">
+                    <li className=" duration-100 hover:bg-gray-100 px-5 py-2 rounded-xl">
                         <Link href="/">
                             Capinhas
                         </Link>
                     </li>
-                    <li className=" hover:scale-110 duration-100 hover:text-[#6d95bd]">
+                    <li className=" duration-100 hover:bg-gray-100 px-5 py-2 rounded-xl">
                         <Link href="/">
                             Fones de Ouvido
                         </Link>
                     </li>
-                    <li className=" hover:scale-110 duration-100 hover:text-[#6d95bd]">
+                    <li className=" duration-100 hover:bg-gray-100 px-5 py-2 rounded-xl">
                         <Link href="/">
                             Smartwatch
                         </Link>
                     </li>
-                    <li className=" hover:scale-110 duration-100 hover:text-[#6d95bd]">
+                    <li className=" duration-100 hover:bg-gray-100 px-5 py-2 rounded-xl">
                         <Link href="/">
                             Contato
                         </Link>
