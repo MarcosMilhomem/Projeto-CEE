@@ -45,7 +45,7 @@ export default function Slider() {
         onClick={prevSlide}
         className="absolute top-1/2 left-2 transform -translate-y-1/2 cursor-pointer p-2 "
       >
-        <ArrowLeftIcon className="h-6 w-6 text-gray-300 hover:scale-115" />
+        <ArrowLeftIcon className="h-6 w-6 text-gray-300 hover:text-white hover:scale-115" />
       </button>
 
       {/* Next Button */}
@@ -53,7 +53,7 @@ export default function Slider() {
         onClick={nextSlide}
         className="absolute top-1/2 right-2 transform -translate-y-1/2 p-2"
       >
-        <ArrowRightIcon className="h-6 w-6 text-gray-300 hover:text-white" />
+        <ArrowRightIcon className="h-6 w-6 text-gray-300 hover:text-white hover:scale-115" />
       </button>
 
       {/* Dots */}
