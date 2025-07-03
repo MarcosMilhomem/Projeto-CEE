@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Nav from '@/components/Nav';
 import Slider from '@/components/Slider';
+import Footer from '@/components/Footer';
 
 export default function Test() {
     return (
@@ -8,6 +9,7 @@ export default function Test() {
             <Header />
             <Nav />
             <Slider />
+            <Footer />
         </div>
     )
 }
